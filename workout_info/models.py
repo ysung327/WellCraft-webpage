@@ -1,7 +1,7 @@
 from django.db import models
 from .myField import PartOfTheWorkout, EngNameOfTheWorkout
 
-# Create your models here.
+
 class Part(models.Model):
     kor_name = PartOfTheWorkout(null=True, blank=True)
     eng_name = EngNameOfTheWorkout(null=True, blank=True)
@@ -18,4 +18,3 @@ class WorkoutInfo(models.Model):
 
     def __str__(self):
         return "%s" % self.kor_name
-

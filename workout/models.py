@@ -4,6 +4,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .myField import DayOfTheWeekField, NumberOfTheWeekField
 from workout_info.models import WorkoutInfo
+
 import datetime
 
 
@@ -65,12 +66,13 @@ class WorkoutLog(models.Model):
 
 class Exercise(models.Model):
     day = models.ForeignKey(Day, on_delete=models.CASCADE, null=True)
-    workout_info = models.ForeignKey(WorkoutInfo, null=True, on_delete=models.CASCADE)
+    info = models.ForeignKey(WorkoutInfo, null=True, on_delete=models.CASCADE)
     set = models.IntegerField(null=True, blank=True)
     times = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
-        return "%s" % self.workout_info
+        return "%s" % self.info
+
 
 
 def MonthWeekNum(now):

@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'accounts',
     'workout',
     'craft',
-    'workout_info'
+    'workout_info',
 ]
 
 MIDDLEWARE = [

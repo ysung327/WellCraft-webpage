@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'accounts/account_menu.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    {% block account %}
+        <div class="my-account-canvas">
+            <div class="my-account-canvas2">
+                <div class="my-account-para">
+                    <p>Register Profile</p>
+                </div>
+                <p style="padding: 0 2.3rem; margin-bottom: 2em;">반갑습니다,&nbsp;&nbsp;<span>{{ current_user }}.</span> &nbsp;회원가입을 완료하기 위해 몇 가지 정보를 추가해주세요!</p> <!-- You need to complete few more steps to use our service usefully. -->
+                <div class="row">
+                    <div class="col-lg-6" id="register-profile-form1">
+                        <form class="site-form" action="" method="post">
+                            {% csrf_token %}
+                            {% for field in profile_form1 %}
+                                <div>
+                                    {{ field.label_tag }}<br>
+                                    {{ field }}
+                                    {% for error in field.error %}
+                                        <p class="error">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                            <button class="my-account-btn" type="submit" name="action" value="next">NEXT</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-6 register-profile-form2">
+                        <form class="site-form" action="" method="post">
+                            {% csrf_token %}
+                            {% for field in profile_form2 %}
+                                <div>
+                                    {{ field.label_tag }}<br>
+                                    <p>{{ field.help_text }}</p>
+                                    {{ field }}
+                                    {% for error in field.error %}
+                                        <p class="error">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                            <button class="my-account-btn" type="submit" name="action" value="complete">COMPLETE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

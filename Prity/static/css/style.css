@@ -1,0 +1,129 @@
+*{
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.container{
+    width: 90%;
+    padding: 10px;
+}
+
+#header{
+	display: flex;
+	flex-direction: row;
+	height: 70px;
+}
+
+a{
+	text-decoration: none;
+	color: #21262C;
+}
+
+a:hover{
+	text-decoration: none;
+	color: #A593E0;
+}
+
+#branding{
+	flex-grow: 1;
+	display: flex;
+	font-size: 20px;
+	font-weight: bolder;
+	color: #21262C;
+	font-family: 'Roboto Mono', monospace;
+}
+
+#branding img{
+	margin-right: 5px;
+	max-width: auto;
+	max-height: 40px;
+}
+#logo{
+	padding-top: 5px;
+}
+
+#logo1, #logo3{
+	color: #A593E0;
+}
+
+#menu-container{
+	flex-grow: 6;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.menu{
+	font-size: 13px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-right: 30px;
+	font-weight: bold;
+}
+
+#menu-container a, #my-account a, #my-account button{
+	text-decoration: none;
+	color: #566270;
+}
+
+#menu-container a:hover, #my-account a:hover, #my-account button:hover{
+	text-decoration: none;
+	color: #A593E0;
+}
+
+#menu-container a:active{
+	text-decoration: none;
+}
+
+#my-account{
+	flex-grow: 2;
+	display:flex;
+	justify-content: flex-end;
+	flex-direction: row;
+	margin-top: 10px;
+}
+
+.glyphicon{
+	font-size: 20px;
+}
+
+/* Showcase */
+#showcase{
+	height: 540px;
+}
+
+#showcase1{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding-right: 40px;
+}
+
+#showcase2 {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	height: 675px;
+}
+
+#showcase2 img{
+	max-height: 100%;
+	max-width: 100%;
+	object-fit: contain;
+}
+
+.btn{
+	padding: 0px;
+}
+
+.btn-link{
+	color: #E0E3DA;
+}
+
+.btn-link:hover{
+	color: #A593E0;
+}
+
+#my-account a{
+	margin-right: 10px;
+}

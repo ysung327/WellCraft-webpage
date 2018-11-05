@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'accounts/account_menu.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    {% block account %}
+        <div class="my-account-canvas">
+            <div class="my-account-canvas2">
+                <div class="my-account-para">
+                    <p>&nbsp;{{ user }}&nbsp;님의 프로필</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h1>계정 정보수정</h1>
+                        <form class="site-form" action="" method="post">
+                            {% csrf_token %}
+                            {% for field in edit_account_form %}
+                                <div>
+                                    {{ field.label_tag }}<br>
+                                    {{ field }}
+                                    {% for error in field.error %}
+                                        <p class="error">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                            {% for field in edit_password_form %}
+                                <div>
+                                    {{ field.label_tag }}<br>
+                                    {{ field }}
+                                    {% for error in field.error %}
+                                        <p class="error">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                            <button class="my-account-btn" type="submit" name="action" value="edit_account">EDIT</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-6 register-profile-form2">
+                        <h1>프로필 수정</h1>
+                        <form class="site-form" action="" method="post">
+                            {% csrf_token %}
+                            {% for field in edit_profile_form1 %}
+                                <div>
+                                    {{ field.label_tag }}<br>
+                                    {{ field }}
+                                    {% for error in field.error %}
+                                        <p class="error">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                            {% for field in edit_profile_form2 %}
+                                <div>
+                                    {{ field.label_tag }}<br>
+                                    <p>{{ field.help_text }}</p>
+                                    {{ field }}
+                                    {% for error in field.error %}
+                                        <p class="error">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                            <button class="my-account-btn" type="submit" name="action" value="edit_profile">EDIT</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

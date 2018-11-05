@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'accounts/account_menu.html' %}
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    {% block account %}
+        <div class="my-account-canvas">
+            <div class="my-account-canvas2">
+                <div class="my-account-para">
+                    <div class="my-account-para2">
+                        <p>내 계정</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6" id="login-form">
+                        <h1>로그인</h1>
+                        <form class="site-form" action="" method="post">
+                            {% csrf_token %}
+                            {% for field in login_form %}
+                                <div>
+                                    {{ field.label_tag }}<br>
+                                    {{ field }}
+                                    {% for error in field.error %}
+                                        <p class="error">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                            <button class="my-account-btn" type="submit" name="action" value="login">LOGIN</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-6" id="register-form">
+                        <h1>회원가입</h1>
+                        <form class="site-form" action="" method="post">
+                            {% csrf_token %}
+                            {% for field in user_form %} <!--user_form 정렬-->
+                                <div>
+                                    {{ field.label_tag }}<br>
+                                    {{ field }}
+                                    {% for error in field.errors %}
+                                        <p class="error">{{ error }}</p>
+                                    {% endfor %}
+                                 </div>
+                           {% endfor %}
+                           <button class="my-account-btn" type="submit" name="action" value="register">REGISTER</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% extends 'base.html' %}
+
+<head>
+	<meta charset="UTF-8">
+    {% load static%}
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Roboto+Mono|Ubuntu" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+{% block content %}
+<body>
+    <div class="container" id="showcase">
+        <div class="row">
+            <div class="col-sm-6" id="showcase1">
+                <p style="font-weight: bolder; font-size: 48px;">Award-winning design studio in Sydney, Australia </p>
+                <br><br>
+                <p style="font-size: 18px;">Erudito is a full-service studio — we design and build beautiful digital products, brands and experiences for amazing companies and disruptive startups. Got something cool for us to work on?</p>
+            </div>
+            <div class="col-sm-6" id="showcase2">
+                <img src="{% static 'images/showcase.jpg' %}" alt="이미지없음">
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
+
+</html>

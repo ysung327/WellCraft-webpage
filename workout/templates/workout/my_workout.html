@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+     <link rel="stylesheet" type="text/css" href="{% static 'workout/style.css' %}">
+</head>
+
+<body>
+    <div class="container" id="my-workout-canvas">
+        <div id="my-workout-para">
+            <h1>{{ user }}님의 운동계획</h1>
+            <p>일주일 운동계획을 완성해보세요!</p>
+        </div>
+        <div id="my-plan-canvas">
+            <div id="my-plan-para">
+                <p>{{ month }}월  {{ week }}째주</p>
+                <!-- 양끝 화살표 추가 -->
+            </div>
+            <div id="my-plan-calender">
+                <div class="row" id="calender-canvas">
+                    {% for day in days %}
+                        {% if day != '일' %}
+                            <div class="day-canvas edge1 col-lg">
+                                <div class="day">
+                                    <p>{{ day }} <span class="glyphicon glyphicon-plus"></span></p>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="day-canvas edge2 col-lg">
+                                <div class="day">
+                                    <p>{{ day }} <span class="glyphicon glyphicon-plus"></span></p>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div id="workout-info">
+            <div class="row">
+                {% for p in part %}
+                    {% if p == '어깨' or p == '허벅지' %}
+                        <div class="col-lg-3 info-box" id="boarder2">
+                            <p>{{ p }}</p>
+                            <div id="info-list"></div>
+                        </div>
+                    {% else %}
+                        <div class="col-lg-3 info-box" id="boarder1">
+                            <p>{{ p }}</p>
+                            <div id="info-list"></div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        $(".info-box").click(function () {
+            var p = $(this).children();
+            var part = p.text();
+            console.log(part);
+            $.ajax({
+                url: '{% url 'workout:load-workout-list' %}',
+                type:'GET',
+                data: {
+                    'part': part
+                },
+                success: function (data) {
+                    console.log('---');
+                    $("#info-list").html(data);
+                },
+                error: function () {
+                    console.log('error')
+                },
+            });
+        });
+    </script>
+{% endblock %}
+</html>

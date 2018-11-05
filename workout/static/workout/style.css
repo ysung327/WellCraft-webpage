@@ -1,0 +1,116 @@
+/*#566270,  #FFFFF3
+ #E0E3DA
+ #A593E0*/
+
+#my-workout-canvas{
+    font-size: 14px;
+}
+
+#my-workout-para h1{
+    font-size: 2.5em;
+    border-left: solid 3px #A593E0;
+    padding-left: 1vw;
+    margin: 0.5em 0;
+    text-transform: capitalize;
+}
+
+#my-workout-para p{
+    font-size: 1.5em;
+    padding-left: 1vw;
+    margin: 0.5em 0;
+    text-transform: capitalize;
+}
+
+#my-plan-canvas{
+    margin-top: 2.5em;
+    display: flex;
+    flex-direction: column;
+    background-color: #566270;
+    color: #FFFFF3;
+    text-align: center;
+}
+
+#my-plan-para p{
+    font-size: 1.5em;
+    margin: 0.5em 0;
+}
+
+#calender-canvas{
+    height: 30vh;
+}
+
+#calender-canvas p{
+    text-align: center;
+    font-size: 1em;
+    margin: 0.5em 0;
+    padding-left: 0;
+}
+
+.day-canvas{
+    background-color: #A593E0;
+    display: flex;
+    flex-direction: column;
+}
+
+.edge1{
+    border-right: 1px solid #FFFFF3;
+    border-top: 1px solid #FFFFF3;
+}
+
+.edge2{
+    border-top: 1px solid #FFFFF3;
+}
+
+.day-canvas span{
+    font-size: 1em;
+    position: absolute;
+    right: 5%;
+    top: 30%;
+}
+
+.day{
+    position: relative;
+    border-bottom: 1px solid #FFFFF3;
+}
+
+.row{
+    margin: 0;
+}
+
+.col-lg{
+    padding: 0;
+}
+
+#workout-info{
+    margin-top: 10vh;
+    background: #566270;
+}
+
+#workout-info p{
+    margin: 0;
+    text-align: center;
+    font-size: 1.5em;
+    color: #FFFFF3;
+}
+
+#boarder1{
+    border-bottom: solid 1px #E0E3DA;
+    border-right: solid 1px #E0E3DA;
+}
+
+#boarder2{
+    border-bottom: solid 1px #E0E3DA;
+}
+
+.info-box{
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+
+

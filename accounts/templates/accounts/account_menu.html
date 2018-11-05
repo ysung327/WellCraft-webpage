@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">
+</head>
+<body>
+    <div class="container" style="margin-top: 10px">
+        <div id="account-menu">
+            <h1 style="font-size: 4.5vw; margin: 0;">Hello,</h1>
+            <p>welcome to my account</p>
+            <ul style="padding-left: 0px;">
+                <li><a href="{% url 'accounts:my-account' %}" class="menu-title">계정</a></li> <!-- my account page 제작 --> <!-- my account-->
+                <li><a href="{% url 'accounts:my-profile' %}" class="menu-content">프로필</a></li> <!-- My Profile -->
+                <li><a href="#" class="menu-content">신체기록</a></li> <!-- My Body Log-->
+                <li><a href="{% url 'workout:my-workout' %}" class="menu-content">운동기록</a></li> <!-- My Workout -->
+                <li><a href="#" class="menu-content">크래프트</a></li> <!-- My Craft -->
+            </ul>
+        </div>
+        {% block account %}
+        {% endblock%}
+    </div>
+    <script src="{% static 'accounts/account.js' %}"></script>
+</body>
+{% endblock %}
+</html>

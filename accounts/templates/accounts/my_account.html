@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'accounts/account_menu.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block account %}
+        <div class="my-account-canvas">
+            <div class="my-account-canvas2">
+                <div class="my-account-para">
+                    <p>&nbsp;{{ user }}&nbsp;님의 계정</p>
+                </div>
+                <p style="padding: 0 2.3rem; margin-bottom: 2em;">
+                    계정정보 및 프로필 수정을 원하시면 오른쪽 버튼을 눌러주세요.
+                    <a class="btn btn-info" href="{% url 'accounts:my-profile' %}">수정하기</a>
+                </p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p style="font-size: 1.5em;">목표달성률</p>
+                        <p>운동달성률</p>
+                        <p>신체달성률</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p style="font-size: 1.5em;">랭킹</p>
+                        <p>{{ user }}님의 랭킹</p>
+                        <p>{{ user }}님의 크래프트 랭킹</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

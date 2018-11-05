@@ -1,0 +1,155 @@
+label{
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+input{
+	margin-bottom: 1em;
+    width: 50%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:2px solid #d9d9d9;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+}
+
+input:focus {
+    width: 100%;
+    border:2px solid #A593E0;
+    opacity: 0.5;
+}
+
+input.streched-input{
+    width: 100%;
+    border:2px solid #A593E0;
+    opacity: 0.5;
+    font-size: 1.2em;
+}
+
+span.streched-input{
+    font-size: 1.2em;
+}
+
+select{
+    margin-bottom: 1.5em;
+    width: 35%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:2px solid #d9d9d9;
+}
+
+select:focus {
+    border: 2px solid #A593E0;
+    opacity: 0.5;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+li{
+    list-style: none;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 0.5px solid #ffffff;
+}
+
+h1{
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+#account-menu{
+    color: #FFFFF3;
+    position: fixed;
+    background-color: #A593E0;
+    padding: 3% 4%;
+}
+
+#account-menu li{
+    font-weight: bold;
+}
+
+.menu-title{
+    font-size: 1.5vw;
+}
+
+.menu-content{
+    font-size: 1.1vw;
+}
+
+#account-menu a{
+    color: #FFFFF3;
+}
+
+#account-menu a:hover{
+	color: #E0E3DA;
+    text-decoration: none;
+}
+
+#account-menu a:active{
+	text-decoration: none;
+}
+
+.my-account-canvas{
+    font-size: 14px;
+    position: relative;
+    width: 100%;
+}
+
+.my-account-canvas2{
+    width: 70%;
+    position: absolute;
+    left: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-account-canvas2 a{
+    font-size: 1em;
+}
+
+.my-account-para {
+    display: flex;
+    font-size: 2.5em;
+    padding: 0 2.3rem;
+    margin-bottom: 2rem;
+}
+
+.my-account-para p{
+    border-left: 3px solid #A593E0;
+    padding-left: 0.5vw;
+    text-transform: capitalize;
+}
+
+.row{
+    padding: 0 2.3rem;
+}
+
+.my-account-btn{
+    background-color: #A593E0;
+    color: #FFFFF3;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:2px solid #A593E0;
+    outline: none;
+    padding: 0.4em 0.7em;
+}
+
+.register-profile-form2 p{
+    font-size: 0.9em;
+}
+
+
